@@ -1,6 +1,6 @@
 package com.example.hotelmanagement.dto;
 
-import com.example.hotelmanagement.entity.HotelContract;
+import com.example.hotelmanagement.entity.Contract;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,5 +12,5 @@ import lombok.ToString;
 @ToString
 public class RoomTypeDTO {
 
-    private HotelContract hotelContract;
+    private Contract contract;
 }

@@ -1,6 +1,5 @@
 package com.example.hotelmanagement.dto;
 
-import com.example.hotelmanagement.entity.Contract;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +9,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class DiscountDTO {
-    private Contract contract;;
+public class UserDTO {
+    private int userId;
+    private String userName;
+    private String userEmail;
+    private String userContact;
+    private String userNIC;
+
+    private BookingDTO bookingDTO;
 }

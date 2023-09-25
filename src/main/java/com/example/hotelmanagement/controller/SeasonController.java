@@ -1,7 +1,7 @@
 package com.example.hotelmanagement.controller;
 
 import com.example.hotelmanagement.dto.SeasonDTO;
-import com.example.hotelmanagement.entity.HotelContract;
+import com.example.hotelmanagement.entity.Contract;
 import com.example.hotelmanagement.entity.Season;
 import com.example.hotelmanagement.service.SeasonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +19,14 @@ public class SeasonController {
     private SeasonService seasonService;
 
     @PostMapping("/addSeason")
-    public ResponseEntity<HotelContract> addSeason(@RequestBody SeasonDTO seasonDTO) {
-        HotelContract savedHotelContract = seasonService.addSeason(seasonDTO);
-        return new ResponseEntity<>(savedHotelContract, HttpStatus.CREATED);
+    public ResponseEntity<Contract> addSeason(@RequestBody SeasonDTO seasonDTO) {
+        Contract savedContract = seasonService.addSeason(seasonDTO);
+        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
     }
 
     @GetMapping("/findAllSeasons")
-    public ResponseEntity<List<HotelContract>> findAllSeasons() {
-        List<HotelContract> allSeasons = seasonService.findAllSeasons();
+    public ResponseEntity<List<Contract>> findAllSeasons() {
+        List<Contract> allSeasons = seasonService.findAllSeasons();
         return new ResponseEntity<>(allSeasons, HttpStatus.OK);
     }
 

@@ -1,9 +1,9 @@
 package com.example.hotelmanagement.service;
 
 import com.example.hotelmanagement.dto.SupplementDTO;
-import com.example.hotelmanagement.entity.HotelContract;
+import com.example.hotelmanagement.entity.Contract;
 import com.example.hotelmanagement.entity.Supplement;
-import com.example.hotelmanagement.repo.HotelContractRepo;
+import com.example.hotelmanagement.repo.ContractRepo;
 import com.example.hotelmanagement.repo.SupplementRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,18 +16,18 @@ import java.util.List;
 public class SupplementService {
 
     @Autowired
-    private HotelContractRepo hotelContractRepo;
+    private ContractRepo contractRepo;
 
     @Autowired
     private SupplementRepo supplementRepo;
 
-    public HotelContract addSupplement(SupplementDTO supplementDTO) {
-        HotelContract hotelContract = supplementDTO.getHotelContract();
-        return hotelContractRepo.save(hotelContract);
+    public Contract addSupplement(SupplementDTO supplementDTO) {
+        Contract contract = supplementDTO.getContract();
+        return contractRepo.save(contract);
     }
 
-    public List<HotelContract> findAllSupplements() {
-        return hotelContractRepo.findAll();
+    public List<Contract> findAllSupplements() {
+        return contractRepo.findAll();
     }
 
     public Supplement getSupplementById(String supplementId) {

@@ -2,7 +2,7 @@ package com.example.hotelmanagement.controller;
 
 import com.example.hotelmanagement.dto.DiscountDTO;
 import com.example.hotelmanagement.entity.Discount;
-import com.example.hotelmanagement.entity.HotelContract;
+import com.example.hotelmanagement.entity.Contract;
 import com.example.hotelmanagement.service.DiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,9 +18,9 @@ public class DiscountController {
 
     // add discount
     @PostMapping("/addDiscount")
-    public ResponseEntity<HotelContract> addDiscount(@RequestBody DiscountDTO discountDTO) {
-        HotelContract savedHotelContract = discountService.addDiscount(discountDTO);
-        return new ResponseEntity<>(savedHotelContract, HttpStatus.CREATED);
+    public ResponseEntity<Contract> addDiscount(@RequestBody DiscountDTO discountDTO) {
+        Contract savedContract = discountService.addDiscount(discountDTO);
+        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
     }
 
     @GetMapping("/getDiscountById/{discountId}")

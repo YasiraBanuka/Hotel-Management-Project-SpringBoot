@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,5 +26,21 @@ public class Season {
     @OneToOne
     @JoinColumn(name = "markup_Id", referencedColumnName = "markupId")
     private Markup markup;
+
+    @ManyToMany
+    @JoinTable(
+            name = "season_supplement",
+            joinColumns = @JoinColumn(name = "season_id"),
+            inverseJoinColumns = @JoinColumn(name = "supplement_id")
+    )
+    private Set<Supplement> supplements = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "season_roomtype",
+            joinColumns = @JoinColumn(name = "season_id"),
+            inverseJoinColumns = @JoinColumn(name = "roomtype_id")
+    )
+    private Set<RoomType> roomTypes = new HashSet<>();
 
 }

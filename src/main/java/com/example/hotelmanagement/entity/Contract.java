@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @Data
-public class HotelContract {
+public class Contract {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

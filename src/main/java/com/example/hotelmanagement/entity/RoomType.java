@@ -1,13 +1,14 @@
 package com.example.hotelmanagement.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -24,5 +25,15 @@ public class RoomType {
     private int maxAdults;
     private int noOfRooms;
     private float roomPrice;
+
+    @ManyToMany(
+            mappedBy = "roomTypes",
+            cascade = {CascadeType.ALL}
+    )
+    private Set<Season> seasons = new HashSet<>();
+
+    @OneToMany(targetEntity = Booking.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "booking_fk", referencedColumnName = "roomId")
+    private List<Booking> bookings;
 
 }

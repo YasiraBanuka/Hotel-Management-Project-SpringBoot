@@ -1,9 +1,9 @@
 package com.example.hotelmanagement.service;
 
 import com.example.hotelmanagement.dto.RoomTypeDTO;
-import com.example.hotelmanagement.entity.HotelContract;
+import com.example.hotelmanagement.entity.Contract;
 import com.example.hotelmanagement.entity.RoomType;
-import com.example.hotelmanagement.repo.HotelContractRepo;
+import com.example.hotelmanagement.repo.ContractRepo;
 import com.example.hotelmanagement.repo.RoomTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,15 +19,15 @@ public class RoomTypeService {
     private RoomTypeRepo roomTypeRepo;
 
     @Autowired
-    private HotelContractRepo hotelContractRepo;
+    private ContractRepo contractRepo;
 
-    public HotelContract addRoomType(RoomTypeDTO roomTypeDTO) {
-        HotelContract hotelContract = roomTypeDTO.getHotelContract();
-        return hotelContractRepo.save(hotelContract);
+    public Contract addRoomType(RoomTypeDTO roomTypeDTO) {
+        Contract contract = roomTypeDTO.getContract();
+        return contractRepo.save(contract);
     }
 
-    public List<HotelContract> findAllRoomTypes() {
-        return hotelContractRepo.findAll();
+    public List<Contract> findAllRoomTypes() {
+        return contractRepo.findAll();
     }
 
     public RoomType getRoomTypeById(String roomId) {

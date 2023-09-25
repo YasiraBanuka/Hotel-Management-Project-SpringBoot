@@ -22,8 +22,8 @@ public class Hotel {
     private String address;
     private String contactInfo;
 
-    @OneToMany(targetEntity = HotelContract.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Contract.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "hotelcontract_fk", referencedColumnName = "hotelId")
-    private List<HotelContract> hotelContracts;
+    private List<Contract> contracts;
 
 }

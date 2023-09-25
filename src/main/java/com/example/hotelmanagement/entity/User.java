@@ -6,22 +6,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Data
-public class Supplement {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int supplementId;
-    private String supplementName;
+    private int userId;
+    private String userName;
+    private String userEmail;
+    private String userContact;
+    private String userNIC;
 
-    @ManyToMany(mappedBy = "supplements", cascade = {CascadeType.ALL})
-    private Set<Season> seasons = new HashSet<>();
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Booking booking;
 
 }

@@ -1,7 +1,7 @@
 package com.example.hotelmanagement.controller;
 
 import com.example.hotelmanagement.dto.SupplementDTO;
-import com.example.hotelmanagement.entity.HotelContract;
+import com.example.hotelmanagement.entity.Contract;
 import com.example.hotelmanagement.entity.Supplement;
 import com.example.hotelmanagement.service.SupplementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +17,14 @@ public class SupplementController {
     private SupplementService supplementService;
 
     @PostMapping("/addSupplement")
-    public ResponseEntity<HotelContract> addSupplement(@RequestBody SupplementDTO supplementDTO) {
-        HotelContract savedHotelContract = supplementService.addSupplement(supplementDTO);
-        return new ResponseEntity<>(savedHotelContract, HttpStatus.CREATED);
+    public ResponseEntity<Contract> addSupplement(@RequestBody SupplementDTO supplementDTO) {
+        Contract savedContract = supplementService.addSupplement(supplementDTO);
+        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
     }
 
     @GetMapping("/findAllSupplements")
-    public ResponseEntity<Iterable<HotelContract>> findAllSupplements() {
-        Iterable<HotelContract> allSupplements = supplementService.findAllSupplements();
+    public ResponseEntity<Iterable<Contract>> findAllSupplements() {
+        Iterable<Contract> allSupplements = supplementService.findAllSupplements();
         return new ResponseEntity<>(allSupplements, HttpStatus.OK);
     }
 

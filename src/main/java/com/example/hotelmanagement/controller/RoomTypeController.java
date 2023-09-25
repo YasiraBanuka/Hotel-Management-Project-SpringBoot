@@ -1,7 +1,7 @@
 package com.example.hotelmanagement.controller;
 
 import com.example.hotelmanagement.dto.RoomTypeDTO;
-import com.example.hotelmanagement.entity.HotelContract;
+import com.example.hotelmanagement.entity.Contract;
 import com.example.hotelmanagement.entity.RoomType;
 import com.example.hotelmanagement.service.RoomTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +17,14 @@ public class RoomTypeController {
     private RoomTypeService roomTypeService;
 
     @PostMapping("/addRoomType")
-    public ResponseEntity<HotelContract> addRoomType(@RequestBody RoomTypeDTO roomTypeDTO) {
-        HotelContract savedHotelContract = roomTypeService.addRoomType(roomTypeDTO);
-        return new ResponseEntity<>(savedHotelContract, HttpStatus.CREATED);
+    public ResponseEntity<Contract> addRoomType(@RequestBody RoomTypeDTO roomTypeDTO) {
+        Contract savedContract = roomTypeService.addRoomType(roomTypeDTO);
+        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
     }
 
     @GetMapping("/findAllRoomTypes")
-    public ResponseEntity<Iterable<HotelContract>> findAllRoomTypes() {
-        Iterable<HotelContract> allRoomTypes = roomTypeService.findAllRoomTypes();
+    public ResponseEntity<Iterable<Contract>> findAllRoomTypes() {
+        Iterable<Contract> allRoomTypes = roomTypeService.findAllRoomTypes();
         return new ResponseEntity<>(allRoomTypes, HttpStatus.OK);
     }
 
