@@ -13,18 +13,18 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class DiscountService {
 
-    @Autowired
-    private DiscountRepo discountRepo;
-
-    @Autowired
-    private ContractRepo contractRepo;
-
-    public Contract addDiscount(DiscountDTO discountDTO) {
-        Contract contract = discountDTO.getContract();
-        return contractRepo.save(contract);
-    }
-    public Discount getDiscountById(String discountId) {
-        return discountRepo.getDiscountById(discountId);
-    }
+//    @Autowired
+//    private DiscountRepo discountRepo;
+//
+//    @Autowired
+//    private ContractRepo contractRepo;
+//
+//    public Contract addDiscount(DiscountDTO discountDTO) {
+//        Contract contract = discountDTO.getContract();
+//        return contractRepo.save(contract);
+//    }
+//    public Discount getDiscountById(String discountId) {
+//        return discountRepo.getDiscountById(discountId);
+//    }
 
 }

@@ -15,23 +15,23 @@ import java.util.List;
 @Transactional
 public class SupplementService {
 
-    @Autowired
-    private ContractRepo contractRepo;
-
-    @Autowired
-    private SupplementRepo supplementRepo;
-
-    public Contract addSupplement(SupplementDTO supplementDTO) {
-        Contract contract = supplementDTO.getContract();
-        return contractRepo.save(contract);
-    }
-
-    public List<Contract> findAllSupplements() {
-        return contractRepo.findAll();
-    }
-
-    public Supplement getSupplementById(String supplementId) {
-        return supplementRepo.getSupplementById(supplementId);
-    }
+//    @Autowired
+//    private ContractRepo contractRepo;
+//
+//    @Autowired
+//    private SupplementRepo supplementRepo;
+//
+//    public Contract addSupplement(SupplementDTO supplementDTO) {
+//        Contract contract = supplementDTO.getContract();
+//        return contractRepo.save(contract);
+//    }
+//
+//    public List<Contract> findAllSupplements() {
+//        return contractRepo.findAll();
+//    }
+//
+//    public Supplement getSupplementById(String supplementId) {
+//        return supplementRepo.getSupplementById(supplementId);
+//    }
 
 }

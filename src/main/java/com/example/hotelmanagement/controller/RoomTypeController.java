@@ -13,30 +13,30 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "api/v1/hotelmanagement")
 public class RoomTypeController {
 
-    @Autowired
-    private RoomTypeService roomTypeService;
-
-    @PostMapping("/addRoomType")
-    public ResponseEntity<Contract> addRoomType(@RequestBody RoomTypeDTO roomTypeDTO) {
-        Contract savedContract = roomTypeService.addRoomType(roomTypeDTO);
-        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
-    }
-
-    @GetMapping("/findAllRoomTypes")
-    public ResponseEntity<Iterable<Contract>> findAllRoomTypes() {
-        Iterable<Contract> allRoomTypes = roomTypeService.findAllRoomTypes();
-        return new ResponseEntity<>(allRoomTypes, HttpStatus.OK);
-    }
-
-    @GetMapping("/getRoomTypeById/{roomId}")
-    public ResponseEntity<RoomType> getRoomTypeById(@PathVariable String roomId) {
-        RoomType roomType = roomTypeService.getRoomTypeById(roomId);
-
-        if (roomType != null) {
-            return new ResponseEntity<>(roomType, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+//    @Autowired
+//    private RoomTypeService roomTypeService;
+//
+//    @PostMapping("/addRoomType")
+//    public ResponseEntity<Contract> addRoomType(@RequestBody RoomTypeDTO roomTypeDTO) {
+//        Contract savedContract = roomTypeService.addRoomType(roomTypeDTO);
+//        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
+//    }
+//
+//    @GetMapping("/findAllRoomTypes")
+//    public ResponseEntity<Iterable<Contract>> findAllRoomTypes() {
+//        Iterable<Contract> allRoomTypes = roomTypeService.findAllRoomTypes();
+//        return new ResponseEntity<>(allRoomTypes, HttpStatus.OK);
+//    }
+//
+//    @GetMapping("/getRoomTypeById/{roomId}")
+//    public ResponseEntity<RoomType> getRoomTypeById(@PathVariable String roomId) {
+//        RoomType roomType = roomTypeService.getRoomTypeById(roomId);
+//
+//        if (roomType != null) {
+//            return new ResponseEntity<>(roomType, HttpStatus.OK);
+//        } else {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
 
 }

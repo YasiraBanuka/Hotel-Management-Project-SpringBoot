@@ -15,23 +15,23 @@ import java.util.List;
 @Transactional
 public class SeasonService {
 
-    @Autowired
-    private ContractRepo contractRepo;
-
-    @Autowired
-    private SeasonRepo seasonRepo;
-
-    public Contract addSeason(SeasonDTO seasonDTO) {
-        Contract contract = seasonDTO.getContract();
-        return contractRepo.save(contract);
-    }
-
-    public List<Contract> findAllSeasons() {
-        return contractRepo.findAll();
-    }
-
-    public Season getSeasonById(String seasonId) {
-        return seasonRepo.getSeasonById(seasonId);
-    }
+//    @Autowired
+//    private ContractRepo contractRepo;
+//
+//    @Autowired
+//    private SeasonRepo seasonRepo;
+//
+//    public Contract addSeason(SeasonDTO seasonDTO) {
+//        Contract contract = seasonDTO.getContract();
+//        return contractRepo.save(contract);
+//    }
+//
+//    public List<Contract> findAllSeasons() {
+//        return contractRepo.findAll();
+//    }
+//
+//    public Season getSeasonById(String seasonId) {
+//        return seasonRepo.getSeasonById(seasonId);
+//    }
 
 }

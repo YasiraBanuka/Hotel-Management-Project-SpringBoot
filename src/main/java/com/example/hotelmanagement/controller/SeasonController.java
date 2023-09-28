@@ -15,30 +15,30 @@ import java.util.List;
 @RequestMapping(value = "api/v1/hotelmanagement")
 public class SeasonController {
 
-    @Autowired
-    private SeasonService seasonService;
-
-    @PostMapping("/addSeason")
-    public ResponseEntity<Contract> addSeason(@RequestBody SeasonDTO seasonDTO) {
-        Contract savedContract = seasonService.addSeason(seasonDTO);
-        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
-    }
-
-    @GetMapping("/findAllSeasons")
-    public ResponseEntity<List<Contract>> findAllSeasons() {
-        List<Contract> allSeasons = seasonService.findAllSeasons();
-        return new ResponseEntity<>(allSeasons, HttpStatus.OK);
-    }
-
-    @GetMapping("/getSeasonById/{seasonId}")
-    public ResponseEntity<Season> getSeasonById(@PathVariable String seasonId) {
-        Season season = seasonService.getSeasonById(seasonId);
-
-        if (season != null) {
-            return new ResponseEntity<>(season, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+//    @Autowired
+//    private SeasonService seasonService;
+//
+//    @PostMapping("/addSeason")
+//    public ResponseEntity<Contract> addSeason(@RequestBody SeasonDTO seasonDTO) {
+//        Contract savedContract = seasonService.addSeason(seasonDTO);
+//        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
+//    }
+//
+//    @GetMapping("/findAllSeasons")
+//    public ResponseEntity<List<Contract>> findAllSeasons() {
+//        List<Contract> allSeasons = seasonService.findAllSeasons();
+//        return new ResponseEntity<>(allSeasons, HttpStatus.OK);
+//    }
+//
+//    @GetMapping("/getSeasonById/{seasonId}")
+//    public ResponseEntity<Season> getSeasonById(@PathVariable String seasonId) {
+//        Season season = seasonService.getSeasonById(seasonId);
+//
+//        if (season != null) {
+//            return new ResponseEntity<>(season, HttpStatus.OK);
+//        } else {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
 
 }

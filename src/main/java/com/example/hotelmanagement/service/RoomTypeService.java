@@ -15,23 +15,23 @@ import java.util.List;
 @Transactional
 public class RoomTypeService {
 
-    @Autowired
-    private RoomTypeRepo roomTypeRepo;
-
-    @Autowired
-    private ContractRepo contractRepo;
-
-    public Contract addRoomType(RoomTypeDTO roomTypeDTO) {
-        Contract contract = roomTypeDTO.getContract();
-        return contractRepo.save(contract);
-    }
-
-    public List<Contract> findAllRoomTypes() {
-        return contractRepo.findAll();
-    }
-
-    public RoomType getRoomTypeById(String roomId) {
-        return roomTypeRepo.getRoomTypeById(roomId);
-    }
+//    @Autowired
+//    private RoomTypeRepo roomTypeRepo;
+//
+//    @Autowired
+//    private ContractRepo contractRepo;
+//
+//    public Contract addRoomType(RoomTypeDTO roomTypeDTO) {
+//        Contract contract = roomTypeDTO.getContract();
+//        return contractRepo.save(contract);
+//    }
+//
+//    public List<Contract> findAllRoomTypes() {
+//        return contractRepo.findAll();
+//    }
+//
+//    public RoomType getRoomTypeById(String roomId) {
+//        return roomTypeRepo.getRoomTypeById(roomId);
+//    }
 
 }

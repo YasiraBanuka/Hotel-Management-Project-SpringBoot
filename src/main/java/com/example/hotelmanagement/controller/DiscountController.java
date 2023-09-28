@@ -13,25 +13,25 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "api/v1/hotelmanagement")
 public class DiscountController {
 
-    @Autowired
-    private DiscountService discountService;
-
-    // add discount
-    @PostMapping("/addDiscount")
-    public ResponseEntity<Contract> addDiscount(@RequestBody DiscountDTO discountDTO) {
-        Contract savedContract = discountService.addDiscount(discountDTO);
-        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
-    }
-
-    @GetMapping("/getDiscountById/{discountId}")
-    public ResponseEntity<Discount> getDiscountById(@PathVariable String discountId) {
-        Discount discount = discountService.getDiscountById(discountId);
-        if (discount != null) {
-            return new ResponseEntity<>(discount, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+//    @Autowired
+//    private DiscountService discountService;
+//
+//    // add discount
+//    @PostMapping("/addDiscount")
+//    public ResponseEntity<Contract> addDiscount(@RequestBody DiscountDTO discountDTO) {
+//        Contract savedContract = discountService.addDiscount(discountDTO);
+//        return new ResponseEntity<>(savedContract, HttpStatus.CREATED);
+//    }
+//
+//    @GetMapping("/getDiscountById/{discountId}")
+//    public ResponseEntity<Discount> getDiscountById(@PathVariable String discountId) {
+//        Discount discount = discountService.getDiscountById(discountId);
+//        if (discount != null) {
+//            return new ResponseEntity<>(discount, HttpStatus.OK);
+//        } else {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
 
 
 }

@@ -15,22 +15,22 @@ import java.util.List;
 @Transactional
 public class MarkupService {
 
-    @Autowired
-    private ContractRepo contractRepo;
-
-    @Autowired
-    private MarkupRepo markupRepo;
-
-    public Contract addMarkup(MarkupDTO markupDTO) {
-        Contract contract = markupDTO.getContract();
-        return contractRepo.save(contract);
-    }
-
-    public List<Contract> findAllMarkups() {
-        return contractRepo.findAll();
-    }
-
-    public Markup getMarkupById(String markupId) {
-        return markupRepo.getMarkupById(markupId);
-    }
+//    @Autowired
+//    private ContractRepo contractRepo;
+//
+//    @Autowired
+//    private MarkupRepo markupRepo;
+//
+//    public Contract addMarkup(MarkupDTO markupDTO) {
+//        Contract contract = markupDTO.getContract();
+//        return contractRepo.save(contract);
+//    }
+//
+//    public List<Contract> findAllMarkups() {
+//        return contractRepo.findAll();
+//    }
+//
+//    public Markup getMarkupById(String markupId) {
+//        return markupRepo.getMarkupById(markupId);
+//    }
 }
